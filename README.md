@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/futhr/spree-faq.png?branch=2-0-stable)](https://travis-ci.org/futhr/spree-faq)
 [![Coverage Status](https://coveralls.io/repos/futhr/spree-faq/badge.png?branch=2-0-stable)](https://coveralls.io/r/futhr/spree-faq)
 [![Code Climate](https://codeclimate.com/github/futhr/spree-faq.png)](https://codeclimate.com/github/futhr/spree-faq)
-[![Gem Version](https://badge.fury.io/rb/spree_postal_service.png)](http://badge.fury.io/rb/spree_postal_service)
+[![Gem Version](https://badge.fury.io/rb/spree-faq.png)](http://badge.fury.io/rb/spree-faq)
 
 An Spree Commerce extension for managing FAQs.
 
