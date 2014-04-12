@@ -1,38 +1,50 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
-describe QuestionCategory do
-  before(:each) do
-    @valid_attributes = {
-      :name => "value for name",
-      :position => 1
-    }
+describe Spree::QuestionCategory do
+
+  context 'instance attributes' do
+    it 'create a new instance given valid attributes' do
+      described_class.create!(name: 'Question 1')
+    end
   end
 
-  it "should create a new instance given valid attributes" do
-    QuestionCategory.create!(@valid_attributes)
+  context 'factory' do
+    it 'is valid' do
+      expect(build(:question_category)).to be_valid
+    end
   end
 
-  it "should have questions" do
-    cat = QuestionCategory.create!(@valid_attributes)
-    cat.questions.should_not be_nil
+  context 'relation' do
+    it { should have_many(:questions) }
+
+    it 'have questions' do
+      expect(subject.questions).not_to be_nil
+    end
   end
 
-  it "should require a name" do
-    category = QuestionCategory.create(@valid_attributes.except(:name))
-    category.should have(1).error_on(:name)
+  context 'validation' do
+    it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
+    it { should accept_nested_attributes_for(:questions) }
   end
 
-  it "should act like a list" do
-    category = QuestionCategory.create(@valid_attributes.merge(:name => 'test'))
-    QuestionCategory.create(@valid_attributes)
-    
-    category.move_to_bottom
-    category.position.should eql(2)
+  context 'mass assignment' do
+    %w(name questions_attributes question answer).each do |column|
+      it { should allow_mass_assignment_of(column.to_sym) }
+    end
   end
 
-  it "should require a unique name" do
-    QuestionCategory.create(@valid_attributes)
-    category = QuestionCategory.create(@valid_attributes)
-    category.should have(1).error_on(:name)
+  context 'acts as list' do
+
+    subject { create(:question_category) }
+
+    before do
+      2.times { create(:question_category) }
+    end
+
+    it 'can have its position changed' do
+      subject.move_to_bottom
+      expect(subject.position).to eq(3)
+    end
   end
 end
