@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'minitest' # required for Rails >= 4.1.0.beta
 gem 'spree', github: 'spree/spree', branch: 'master'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
 
 gemspec
