@@ -9,7 +9,7 @@ An Spree Commerce extension for managing FAQs.
 
 ## Installation
 
-In your `Gemfile`
+Add to your `Gemfile`:
 
 ```ruby
 gem 'spree_faq', '~> 2.0.0'
@@ -24,7 +24,7 @@ Then run from the command line:
 
 ## Contributing
 
-See corresponding [guiedlines][1].
+See corresponding [guidelines][1].
 
 ---
 
