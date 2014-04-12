@@ -1,7 +1,7 @@
 # Spree Frequently Asked Question
 
-[![Build Status](https://travis-ci.org/futhr/spree-faq.png?branch=2-1-stable)](https://travis-ci.org/futhr/spree-faq)
-[![Coverage Status](https://coveralls.io/repos/futhr/spree-faq/badge.png?branch=2-1-stable)](https://coveralls.io/r/futhr/spree-faq)
+[![Build Status](https://travis-ci.org/futhr/spree-faq.png?branch=2-2-stable)](https://travis-ci.org/futhr/spree-faq)
+[![Coverage Status](https://coveralls.io/repos/futhr/spree-faq/badge.png?branch=2-2-stable)](https://coveralls.io/r/futhr/spree-faq)
 [![Code Climate](https://codeclimate.com/github/futhr/spree-faq.png)](https://codeclimate.com/github/futhr/spree-faq)
 [![Gem Version](https://badge.fury.io/rb/spree-faq.png)](http://badge.fury.io/rb/spree-faq)
 
@@ -12,7 +12,7 @@ An Spree Commerce extension for managing FAQs.
 Add to your `Gemfile`:
 
 ```ruby
-gem 'spree_faq', '~> 2.1.0'
+gem 'spree_faq', '~> 2.2.0'
 ```
 
 Then run from the command line:

@@ -1,4 +1,4 @@
-#= require admin/spree_backend
+#= require spree/backend
 
 (($) ->
   $('form').on 'click', '.add_fields', ->
