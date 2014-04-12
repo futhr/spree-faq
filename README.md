@@ -1,27 +1,37 @@
-Spree Frequently Asked Question Extension
-=========
+# Spree Frequently Asked Question
 
-An spree extension for managing FAQs
+[![Build Status](https://travis-ci.org/futhr/spree-faq.png?branch=2-0-stable)](https://travis-ci.org/futhr/spree-faq)
+[![Coverage Status](https://coveralls.io/repos/futhr/spree-faq/badge.png?branch=2-0-stable)](https://coveralls.io/r/futhr/spree-faq)
+[![Code Climate](https://codeclimate.com/github/futhr/spree-faq.png)](https://codeclimate.com/github/futhr/spree-faq)
+[![Gem Version](https://badge.fury.io/rb/spree_postal_service.png)](http://badge.fury.io/rb/spree_postal_service)
 
-Installation
-============
+An Spree Commerce extension for managing FAQs.
 
-To install the extension use this command:
+## Installation
 
-script/extension install git://github.com/joshnuss/spree-faq.git
+In your `Gemfile`
 
-rake db:migrate
+```ruby
+gem 'spree_faq', '~> 2.0.0'
+```
 
-rake spree:extensions:faq:update
+Then run from the command line:
 
-Viewing FAQs
-============
+    bundle install
+    rails g spree_faq:install
 
-http://yourdomain.tld/faq
+---
 
-Editing FAQs
-===========
+## Contributing
 
-1. Login to Administraton Console
-2. Click on FAQ 
+See corresponding [guiedlines][1].
 
+---
+
+Copyright (c) 2009-2014 [Josh Nussbaum][2], [Tobias Bohwalli][3], and other [contributors][4], released under the [New BSD License][5]
+
+[1]: https://github.com/futhr/spree-faq/blob/master/CONTRIBUTING.md
+[2]: https://github.com/joshnuss
+[3]: https://github.com/futhr
+[4]: https://github.com/futhr/spree-faq/graphs/contributors
+[5]: https://github.com/futhr/spree-faq/blob/master/LICENSE.md
