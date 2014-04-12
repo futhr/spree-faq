@@ -3,7 +3,7 @@ module Spree
     helper 'spree/products'
 
     def index
-      @categories = QuestionCategory.all(include: :questions)
+      @categories = QuestionCategory.includes(:questions).load
     end
 
     def default_title

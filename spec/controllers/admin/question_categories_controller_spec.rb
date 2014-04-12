@@ -64,4 +64,17 @@ describe Spree::Admin::QuestionCategoriesController do
       expect { spree_delete :destroy }.to raise_error
     end
   end
+
+  context 'permitted attributes' do
+    let(:permitted_attributes) do
+      [:questions_attributes, :question, :answer,
+        question: [:question_category_id, :question, :answer]]
+    end
+
+    specify do
+      controller.params = { question_category: attributes }
+      controller.params.require(:question_category).should_receive(:permit).with(*permitted_attributes)
+      controller.send :question_category_params
+    end
+  end
 end

@@ -28,12 +28,6 @@ describe Spree::QuestionCategory do
     it { should accept_nested_attributes_for(:questions) }
   end
 
-  context 'mass assignment' do
-    %w(name questions_attributes question answer).each do |column|
-      it { should allow_mass_assignment_of(column.to_sym) }
-    end
-  end
-
   context 'acts as list' do
 
     subject { create(:question_category) }

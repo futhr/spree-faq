@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   s.has_rdoc = false
 
-  s.add_runtime_dependency 'spree_core', '~> 2.0.0'
+  s.add_runtime_dependency 'spree_core', '~> 2.1.0'
 
   s.add_development_dependency 'rspec-rails', '~> 2.14'
   s.add_development_dependency 'capybara', '~> 2.2.1'
@@ -35,8 +35,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'simplecov', '~> 0.7.1'
   s.add_development_dependency 'database_cleaner', '~> 1.2.0'
   s.add_development_dependency 'i18n-spec', '~> 0.4.1'
-  s.add_development_dependency 'coffee-rails', '~> 3.2.2'
-  s.add_development_dependency 'sass-rails', '~> 3.2.6'
+  s.add_development_dependency 'coffee-rails', '~> 4.0.0'
+  s.add_development_dependency 'sass-rails', '~> 4.0.0'
   s.add_development_dependency 'ffaker', '>= 1.24.0'
   s.add_development_dependency 'guard-rspec', '>= 4.2.0'
   s.add_development_dependency 'launchy', '>= 2.4.0'

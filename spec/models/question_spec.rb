@@ -50,12 +50,6 @@ describe Spree::Question do
     end
   end
 
-  context 'mass assignment' do
-    %w(question answer question_category_id question_category).each do |column|
-      it { should allow_mass_assignment_of(column.to_sym) }
-    end
-  end
-
   context 'acts as list' do
 
     before do
