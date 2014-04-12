@@ -6,7 +6,6 @@ class CreateQuestions < ActiveRecord::Migration
       t.text    :answer
       t.integer :position
 
-
       t.timestamps
     end
   end
