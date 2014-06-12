@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'spree_core', '~> 2.2.0'
 
+  s.add_development_dependency 'rspec', '~> 2.14'
   s.add_development_dependency 'rspec-rails', '~> 2.14'
   s.add_development_dependency 'capybara', '~> 2.2.1'
   s.add_development_dependency 'selenium-webdriver', '>= 2.40.0'
