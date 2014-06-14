@@ -27,4 +27,4 @@ Starting point:
 
 [1]: http://www.fsf.org/licensing/essays/free-sw.html
 [2]: https://github.com/futhr/spree-faq/issues
-[3]: http://www.localeapp.com/projects/6629
+[3]: https://github.com/futhr/spree-faq/blob/2-1-stable/config/locales
