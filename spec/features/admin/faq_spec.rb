@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 feature 'Admin FAQ', :js do
   stub_authorization!
 

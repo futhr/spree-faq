@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Spree::Admin::QuestionCategoriesController do
   stub_authorization!
 
