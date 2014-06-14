@@ -42,5 +42,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'launchy', '>= 2.4.0'
   s.add_development_dependency 'pry-rails', '>= 0.3.0'
   s.add_development_dependency 'coveralls', '>= 0.7.0'
-  s.add_development_dependency 'localeapp', '>= 0.7.2'
 end
