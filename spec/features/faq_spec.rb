@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 feature 'FAQ', :js do
 
   given!(:user) { create(:user) }

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Spree::Question do
 
   let!(:question_category) { create(:question_category) }

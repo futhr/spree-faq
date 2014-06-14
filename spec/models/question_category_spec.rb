@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Spree::QuestionCategory do
 
   context 'instance attributes' do
