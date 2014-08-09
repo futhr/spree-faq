@@ -1,4 +1,4 @@
-feature 'Admin FAQ', :js do
+RSpec.feature 'Admin FAQ', :js do
   stub_authorization!
 
   given!(:admin_user) { create(:admin_user) }

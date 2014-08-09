@@ -1,16 +1,16 @@
-describe Spree::Admin::QuestionCategoriesController do
+RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
   stub_authorization!
 
   let!(:user) { create(:user) }
   let!(:question_category) { create(:question_category) }
   let!(:question) { create(:question, question_category: question_category) }
-  let (:attributes) { attributes_for(:question_category) }
+  let(:attributes) { attributes_for(:question_category) }
 
   before { controller.stub spree_current_user: user }
 
   context 'controller instance' do
     it 'use Admin::QuestionCategoriesController' do
-      expect(controller).to be_an_instance_of Spree::Admin::QuestionCategoriesController
+      expect(controller).to be_a Spree::Admin::QuestionCategoriesController
     end
   end
 

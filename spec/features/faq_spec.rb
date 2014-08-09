@@ -1,4 +1,4 @@
-feature 'FAQ', :js do
+RSpec.feature 'FAQ', :js do
 
   given!(:user) { create(:user) }
   given!(:question_category) { create(:question_category, name: 'Shopping') }
