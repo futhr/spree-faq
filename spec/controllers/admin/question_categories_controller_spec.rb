@@ -1,4 +1,4 @@
-describe Spree::Admin::QuestionCategoriesController do
+RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
   stub_authorization!
 
   let!(:user) { create(:user) }
@@ -6,11 +6,11 @@ describe Spree::Admin::QuestionCategoriesController do
   let!(:question) { create(:question, question_category: question_category) }
   let (:attributes) { attributes_for(:question_category) }
 
-  before { controller.stub spree_current_user: user }
+  before { allow(controller).to receive(:try_spree_current_user) }
 
   context 'controller instance' do
-    it 'use Admin::QuestionCategoriesController' do
-      expect(controller).to be_an_instance_of Spree::Admin::QuestionCategoriesController
+    it 'uses Admin::QuestionCategoriesController' do
+      expect(controller).to be_a Spree::Admin::QuestionCategoriesController
     end
   end
 
@@ -71,7 +71,7 @@ describe Spree::Admin::QuestionCategoriesController do
 
     specify do
       controller.params = { question_category: attributes }
-      controller.params.require(:question_category).should_receive(:permit).with(*permitted_attributes)
+      allow(controller.params.require(:question_category)).to receive(:permit).with(*permitted_attributes)
       controller.send :question_category_params
     end
   end
