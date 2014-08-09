@@ -3,10 +3,12 @@ RSpec.feature 'FAQ', :js do
   given!(:user) { create(:user) }
   given!(:question_category) { create(:question_category, name: 'Shopping') }
   given!(:question) do
-    create(:question,
+    create(
+      :question,
       question_category: question_category,
       question: 'Do you sell stuff?',
-      answer: 'Think so..')
+      answer: 'Think so..'
+    )
   end
 
   background do

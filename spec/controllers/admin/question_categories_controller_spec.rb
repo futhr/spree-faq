@@ -4,7 +4,7 @@ RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
   let!(:user) { create(:user) }
   let!(:question_category) { create(:question_category) }
   let!(:question) { create(:question, question_category: question_category) }
-  let (:attributes) { attributes_for(:question_category) }
+  let(:attributes) { attributes_for(:question_category) }
 
   before { allow(controller).to receive(:try_spree_current_user) }
 
@@ -65,8 +65,12 @@ RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
 
   context 'permitted attributes' do
     let(:permitted_attributes) do
-      [:questions_attributes, :question, :answer,
-        question: [:question_category_id, :question, :answer]]
+      [
+        :questions_attributes,
+        :question,
+        :answer,
+        question: [:question_category_id, :question, :answer]
+      ]
     end
 
     specify do
