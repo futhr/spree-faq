@@ -12,8 +12,15 @@ An Spree Commerce extension for managing FAQs.
 Add to your `Gemfile`:
 
 ```ruby
-gem 'spree_faq', '~> 2.1.0'
+gem 'spree-faq', '~> 2.1.0', require: 'spree_faq'
 ```
+
+or:
+
+```ruby
+gem 'spree-faq', github: 'futhr/spree-faq', require: 'spree_faq', branch: '2-1-stable'
+```
+
 
 Then run from the command line:
 
