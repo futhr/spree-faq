@@ -22,9 +22,13 @@ require 'shoulda-matchers'
 require 'ffaker'
 
 RSpec.configure do |config|
-  config.mock_with :rspec
+  config.mock_with :rspec do |mock|
+    mock.syntax = [:should, :expect]
+  end
+
   config.use_transactional_fixtures = false
-  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.infer_spec_type_from_file_location!
+  config.raise_errors_for_deprecations!
 end
 
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
