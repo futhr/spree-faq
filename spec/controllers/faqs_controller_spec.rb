@@ -1,9 +1,9 @@
-describe Spree::FaqsController do
+RSpec.describe Spree::FaqsController, type: :controller do
 
   let!(:question_category) { create(:question_category) }
   let!(:question) { create(:question, question_category: question_category) }
 
-  before { controller.stub spree_current_user: nil }
+  before { allow(controller).to receive(:try_spree_current_user) }
 
   context '#index' do
     specify do
@@ -20,7 +20,7 @@ describe Spree::FaqsController do
   end
 
   context '#default_title' do
-    it 'return default title' do
+    it 'returns default title' do
       expect(subject.default_title).to eq Spree.t(:frequently_asked_questions, scope: :spree_faq)
     end
   end

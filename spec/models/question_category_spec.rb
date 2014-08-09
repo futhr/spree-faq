@@ -1,4 +1,4 @@
-describe Spree::QuestionCategory do
+RSpec.describe Spree::QuestionCategory, type: :model do
 
   context 'instance attributes' do
     it 'create a new instance given valid attributes' do
@@ -6,14 +6,12 @@ describe Spree::QuestionCategory do
     end
   end
 
-  context 'factory' do
-    it 'is valid' do
-      expect(build(:question_category)).to be_valid
-    end
+  it 'factory is valid' do
+    expect(build(:question_category)).to be_valid
   end
 
   context 'relation' do
-    it { should have_many(:questions) }
+    it { is_expected.to have_many(:questions) }
 
     it 'have questions' do
       expect(subject.questions).not_to be_nil
@@ -21,9 +19,9 @@ describe Spree::QuestionCategory do
   end
 
   context 'validation' do
-    it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of(:name) }
-    it { should accept_nested_attributes_for(:questions) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
+    it { is_expected.to accept_nested_attributes_for(:questions) }
   end
 
   context 'acts as list' do
