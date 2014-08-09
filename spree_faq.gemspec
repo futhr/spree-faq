@@ -1,5 +1,5 @@
 lib = File.expand_path('../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
+$LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
 
 require 'spree_faq/version'
 
@@ -7,14 +7,14 @@ Gem::Specification.new do |s|
   s.platform     = Gem::Platform::RUBY
   s.name          = 'spree-faq'
   s.version       = SpreeFaq.version
-  s.summary       = %q{Adds an easy FAQ page for Spree Commerce}
-  s.description   = %q{With this gem you get an faq page and the management tools to make it very easy to update your faq and reduce the demand on your sites customer service}
+  s.summary       = 'Adds an easy FAQ page for Spree Commerce'
+  s.description   = 'With this gem you get an faq page and the management tools to make it very easy to update your faq and reduce the demand on your sites customer service'
   s.required_ruby_version = '>= 1.9.3'
 
   s.authors      = ['Josh Nussbaum', 'Tobias Bohwalli']
   s.email        = 'hi@futhr.io'
   s.homepage     = 'https://github.com/futhr/spree-faq'
-  s.license      = %q{BSD-3}
+  s.license      = 'BSD-3'
 
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- spec/*`.split("\n")

@@ -9,9 +9,17 @@ module Spree
         @question_category ||= @object
       end
 
+      def safe_params
+        [
+          :questions_attributes,
+          :question,
+          :answer,
+          question: [:question_category_id, :question, :answer]
+        ]
+      end
+
       def question_category_params
-        params.require(:question_category).permit(:questions_attributes, :question, :answer,
-                       question: [:question_category_id, :question, :answer])
+        params.require(:question_category).permit(*safe_params)
       end
     end
   end
