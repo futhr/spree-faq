@@ -12,7 +12,7 @@ An Spree Commerce extension for managing FAQs.
 Add to your `Gemfile`:
 
 ```ruby
-gem 'spree_faq', github: 'futhr/spree-faq', branch: 'master'
+gem 'spree-faq', github: 'futhr/spree-faq', require: 'spree_faq', branch: 'master'
 ```
 
 Then run from the command line:
