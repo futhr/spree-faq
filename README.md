@@ -1,11 +1,13 @@
-# Spree Frequently Asked Question
+# Spree FAQ
 
 [![Build Status](https://travis-ci.org/futhr/spree-faq.svg?branch=master)](https://travis-ci.org/futhr/spree-faq)
 [![Coverage Status](https://img.shields.io/coveralls/futhr/spree-faq.svg)](https://coveralls.io/r/futhr/spree-faq?branch=master)
 [![Code Climate](https://codeclimate.com/github/futhr/spree-faq/badges/gpa.svg)](https://codeclimate.com/github/futhr/spree-faq)
 [![Gem Version](https://badge.fury.io/rb/spree-faq.svg)](http://badge.fury.io/rb/spree-faq)
 
-An Spree Commerce extension for managing FAQs.
+An opinionated `plug-and-play` styled Spree Commerce extension for managing FAQs. With this gem you get an FAQ page and the management tools to make it very easy to update your FAQ and reduce the demand on your sites customer service.
+
+---
 
 ## Installation
 
@@ -20,6 +22,8 @@ Then run from the command line:
 ```sh
 bundle && bundle exec rails g spree_faq:install
 ```
+
+**Note:** The FAQ link is not add to the frontend layout, its up to you to place it in your layout where you prefer.
 
 ---
 

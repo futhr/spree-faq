@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name          = 'spree-faq'
   s.version       = SpreeFaq.version
   s.summary       = 'Adds an easy FAQ page for Spree Commerce'
-  s.description   = 'With this gem you get an faq page and the management tools to make it very easy to update your faq and reduce the demand on your sites customer service'
+  s.description   = s.summary
   s.required_ruby_version = '>= 2.1.0'
 
   s.authors      = ['Josh Nussbaum', 'Tobias Bohwalli']
