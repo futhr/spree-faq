@@ -17,8 +17,9 @@ gem 'spree-faq', github: 'futhr/spree-faq', require: 'spree_faq', branch: 'maste
 
 Then run from the command line:
 
-    bundle install
-    rails g spree_faq:install
+```sh
+bundle && bundle exec rails g spree_faq:install
+```
 
 ---
 
