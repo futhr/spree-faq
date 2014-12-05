@@ -1,7 +1,7 @@
 RSpec.describe Spree::Question, type: :model do
 
   let!(:question_category) { create(:question_category) }
-  let(:question) { create(:question, question_category_id: question_category.id) }
+  let!(:question) { create(:question, question_category_id: question_category.id) }
 
   subject { question }
 
@@ -57,7 +57,7 @@ RSpec.describe Spree::Question, type: :model do
 
     it 'can have its position changed' do
       subject.move_to_bottom
-      expect(subject.position).to eq(3)
+      expect(subject.position).to be(3)
     end
   end
 end

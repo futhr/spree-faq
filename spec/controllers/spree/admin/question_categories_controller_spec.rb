@@ -1,22 +1,12 @@
 RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
   stub_authorization!
 
-  let!(:user) { create(:user) }
   let!(:question_category) { create(:question_category) }
-  let!(:question) { create(:question, question_category: question_category) }
-  let(:attributes) { attributes_for(:question_category) }
-
-  before { allow(controller).to receive(:try_spree_current_user) }
-
-  context 'controller instance' do
-    it 'uses Admin::QuestionCategoriesController' do
-      expect(controller).to be_a Spree::Admin::QuestionCategoriesController
-    end
-  end
 
   context '#index' do
-    specify do
-      spree_get :index
+    before { spree_get :index }
+
+    it 'renders the :index template' do
       expect(response).to render_template :index
     end
   end
@@ -24,18 +14,30 @@ RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
   context '#new' do
     before { spree_get :new }
 
-    it { expect(assigns(:question_category)).to be_a_new Spree::QuestionCategory }
-    it { expect(response).to render_template :new }
+    it 'assigns a new Spree::QuestionCategory' do
+      expect(assigns(:question_category)).to be_a_new Spree::QuestionCategory
+    end
+
+    it 'renders the :new template' do
+      expect(response).to render_template :new
+    end
   end
 
   context '#edit' do
     before { spree_get :edit, id: question_category }
 
-    it { expect(assigns(:question_category)).to eq question_category }
-    it { expect(response).to render_template :edit }
+    it 'assigns question_category to object' do
+      expect(assigns(:question_category)).to eq question_category
+    end
+
+    it 'renders the :edit template' do
+      expect(response).to render_template :edit
+    end
   end
 
-  context '#create' do
+  describe '#create' do
+    let(:attributes) { attributes_for(:question_category) }
+
     context 'with valid params' do
       it 'creates a new Spree::QuestionCategory' do
         expect {
@@ -60,23 +62,6 @@ RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
 
     it 'requires the :id parameter' do
       expect { spree_delete :destroy }.to raise_error
-    end
-  end
-
-  context 'permitted attributes' do
-    let(:permitted_attributes) do
-      [
-        :questions_attributes,
-        :question,
-        :answer,
-        question: [:question_category_id, :question, :answer]
-      ]
-    end
-
-    specify do
-      controller.params = { question_category: attributes }
-      allow(controller.params.require(:question_category)).to receive(:permit).with(*permitted_attributes)
-      controller.send :question_category_params
     end
   end
 end

@@ -8,15 +8,23 @@ en:
       spree/question:
         one: Question
         other: Questions
+    attributes:
+      spree/question_category:
+        question: Question
+        answer: Answer
+        created_at: Created At
+        updated_at: Updated At
+      spree/question:
+        name: Name
+        created_at: Created At
+        updated_at: Updated At
   spree:
+    listing_resource: Listing %{resource}
+    new_resource: New %{resource}
+    editing_resource: Editing %{resource}
+    back_to_resource: Back to %{resource}
     spree_faq:
       add_question: Add Question
-      answer: Answer
-      back_to_categories: Back to Categories
       category_name: Category Name
-      create_category: Create Category
-      editing_category_questions: Editing Category Questions
       frequently_asked_questions: Frequently Asked Questions
-      new_question_category: New Category
-      question_categories: Frequently Asked Questions
-      question_categories_admin: FAQ
+      faq: FAQ

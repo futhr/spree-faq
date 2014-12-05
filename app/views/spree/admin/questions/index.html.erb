@@ -1,0 +1,81 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_resource, resource: Spree::Question.model_name.human(count: 2)) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_resource, resource: Spree::Question.model_name.human), spree.new_admin_question_path, icon: 'add', class: 'btn-success', id: 'admin_new_question_link' %>
+<% end %>
+
+<% content_for :table_filter do %>
+  <div data-hook="admin_reviews_index_search">
+    <%= search_form_for [:admin, @search] do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag :q_question_cont, Spree::Question.human_attribute_name(:question) %>
+            <%= f.text_field :question_cont, class: 'form-control js-quick-search-target' %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag :q_answer_cont, Spree::Question.human_attribute_name(:answer) %>
+            <%= f.text_field :answer_cont, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag :q_question_category_id_eq, Spree::QuestionCategory.model_name.human %>
+            <%= f.collection_select :question_category_id_eq, Spree::QuestionCategory.all, :id, :name, { include_blank: Spree.t('match_choices.all') }, class: 'select2' %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <!-- free space -->
+          </div>
+        </div>
+      </div>
+      <div class="form-actions" data-hook="admin_reviews_index_search_buttons">
+        <%= button Spree.t(:filter_results), 'search' %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render 'spree/admin/shared/index_table_options', collection: @questions %>
+
+<% if @questions.any? %>
+  <table class="table sortable" id="listing_questions" data-hook data-sortable-link="<%= update_positions_admin_questions_url %>">
+    <thead>
+      <tr data-hook="admin_question_index_headers">
+        <th class="no-border"></th>
+        <th><%= sort_link @search, :updated_at, Spree::Question.human_attribute_name(:updated_at) %></th>
+        <th><%= sort_link @search, :question, Spree::Question.human_attribute_name(:question) %></th>
+        <th><%= sort_link @search, :question_category_id, Spree::QuestionCategory.model_name.human %></th>
+        <th data-hook="admin_question_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr id="<%= spree_dom_id question %>" data-hook="admin_question_index_rows" class="<%= cycle('odd', 'even') %>">
+          <td class="move-handle"><span class="icon icon-move handle"></span></td>
+          <td><%= l question.updated_at, format: :short %></td>
+          <td><%= h question.question %></td>
+          <td><%= question.question_category_name %></td>
+          <td data-hook="admin_question_index_row_actions" class="actions">
+            <%= link_to_edit question, no_text: true %>
+            <%= link_to_delete question, no_text: true %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-warning no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: Spree::Question.model_name.human(count: 2)) %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_question_path %>!
+  </div>
+<% end %>
+
+<%= render 'spree/admin/shared/index_table_options', collection: @questions %>

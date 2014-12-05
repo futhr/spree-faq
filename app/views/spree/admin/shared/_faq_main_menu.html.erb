@@ -1,0 +1,3 @@
+<% if can? :admin, Spree::QuestionCategory %>
+  <%= main_menu_tree Spree.t(:faq, scope: :spree_faq), icon: 'book', sub_menu: 'faq' %>
+<% end %>

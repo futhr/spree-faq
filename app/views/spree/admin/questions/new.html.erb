@@ -1,0 +1,5 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:new_resource, resource: Spree::Question.model_name.human) %>
+<% end %>
+
+<%= render 'form', resource: @question %>

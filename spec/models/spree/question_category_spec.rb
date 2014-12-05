@@ -21,7 +21,6 @@ RSpec.describe Spree::QuestionCategory, type: :model do
   context 'validation' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_uniqueness_of(:name) }
-    it { is_expected.to accept_nested_attributes_for(:questions) }
   end
 
   context 'acts as list' do
@@ -34,7 +33,7 @@ RSpec.describe Spree::QuestionCategory, type: :model do
 
     it 'can have its position changed' do
       subject.move_to_bottom
-      expect(subject.position).to eq(3)
+      expect(subject.position).to be(3)
     end
   end
 end

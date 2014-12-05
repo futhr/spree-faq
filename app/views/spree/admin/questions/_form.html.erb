@@ -1,0 +1,23 @@
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:back_to_resource, resource: Spree::Question.model_name.human(count: 2)), spree.admin_questions_path, icon: 'arrow-left', class: 'btn-primary' %>
+<% end %>
+
+<%= form_for [:admin, resource] do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag :question_category, Spree::QuestionCategory.model_name.human %>
+        <%= f.collection_select :question_category_id, Spree::QuestionCategory.all, :id, :name, { include_blank: Spree.t('match_choices.none') }, class: 'select2' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :question, Spree::Question.human_attribute_name(:question) %>
+        <%= f.text_field :question, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :answer, Spree::Question.human_attribute_name(:answer) %>
+        <%= f.text_area :answer, rows: 2, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <%= render "spree/admin/shared/#{resource.new_record? ? 'new' : 'edit'}_resource_links" %>
+<% end %>

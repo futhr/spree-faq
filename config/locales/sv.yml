@@ -8,15 +8,23 @@ sv:
       spree/question:
         one: Fråga
         other: Frågor
+    attributes:
+      spree/question_category:
+        question: Fråga
+        answer: Svar
+        created_at: Datum skapad
+        updated_at: Datum uppdaterad
+      spree/question:
+        name: Namn
+        created_at: Datum skapad
+        updated_at: Datum uppdaterad
   spree:
+    listing_resource: Alla %{resource}
+    new_resource: Ny %{resource}
+    editing_resource: Ändra %{resource}
+    back_to_resource: Tillbaka till %{resource}
     spree_faq:
       add_question: Lägg till fråga
-      answer: Svar
-      back_to_categories: Tillbaka till kategorier
       category_name: Kategorinamn
-      create_category: Skapa kategori
-      editing_category_questions: Ändra kategori frågor
       frequently_asked_questions: Vanliga frågor och svar
-      new_question_category: Ny kategori
-      question_categories: Vanliga frågor och svar
-      question_categories_admin: FAQ
+      faq: Frågor och svar
