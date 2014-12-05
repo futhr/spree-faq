@@ -13,22 +13,30 @@ SimpleCov.start do
   add_group  'Libraries', 'lib'
 end
 
-ENV['RAILS_ENV'] = 'test'
+ENV['RAILS_ENV'] ||= 'test'
 
-require File.expand_path('../dummy/config/environment.rb', __FILE__)
+begin
+  require File.expand_path('../dummy/config/environment', __FILE__)
+rescue LoadError
+  puts 'Could not load dummy application. Please ensure you have run `bundle exec rake test_app`'
+  exit
+end
 
 require 'rspec/rails'
 require 'shoulda-matchers'
 require 'ffaker'
+require 'pry'
 
 RSpec.configure do |config|
-  config.mock_with :rspec do |mock|
-    mock.syntax = [:should, :expect]
-  end
-
-  config.use_transactional_fixtures = false
-  config.infer_spec_type_from_file_location!
+  config.fail_fast = false
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
   config.raise_errors_for_deprecations!
+  config.infer_spec_type_from_file_location!
+
+  config.expect_with :rspec do |expectations|
+    expectations.syntax = :expect
+  end
 end
 
-Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
+Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |file| require file }

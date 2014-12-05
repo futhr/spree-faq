@@ -11,17 +11,13 @@ Documentation:
 SingleSpaceBeforeFirstArg:
   Enabled: false
 
-# Rubocop default is leading but hound-ci use trailing.
-DotPosition:
-  EnforcedStyle: leading
-
 # Don't mess with RSpec DSL.
 Blocks:
   Exclude:
     - 'spec/**/*'
 
 # We really like the readability with newline in beginning of classes.
-EmptyLinesAroundMethodBody:
+EmptyLinesAroundBlockBody:
   Enabled: false
 
 EmptyLinesAroundClassBody:
