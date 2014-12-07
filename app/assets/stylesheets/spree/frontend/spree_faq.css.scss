@@ -2,17 +2,32 @@
  *= require spree/frontend
 */
 
-#questions .question {
-  margin-bottom: 1em;
-  padding: 1em;
-  border: solid 1px #ccc;
+.faq-sidebar .nav > {
 
-  textarea, input {
-    width: 600px;
+  $faq-color: #103452;
+
+  .active > a, .active:hover > a, .active:focus > a {
+    padding-left: 18px;
+    font-weight: 700;
+    color: $faq-color;
+    border-left: 3px solid $faq-color;
   }
 
-  textarea {
-    height: 40px;
-    padding: 0;
+  li > a {
+    display: block;
+    padding: 4px 20px;
+    font-weight: 500;
+
+    &:hover, &:focus {
+      padding-left: 19px;
+      color: $faq-color;
+      text-decoration: none;
+      border-left: 1px solid $faq-color;
+    }
   }
+}
+
+#faqs ul > li {
+  list-style: none;
+  margin-top: 2em;
 }

@@ -6,8 +6,8 @@ RSpec.feature 'FAQ', :js do
     create(
       :question,
       question_category: question_category,
-      question: 'Do you sell stuff?',
-      answer: 'Think so..'
+      question: 'You sell stuff?',
+      answer: 'Yupp..'
     )
   end
 
@@ -16,15 +16,16 @@ RSpec.feature 'FAQ', :js do
   end
 
   scenario 'have all elements' do
-    expect(page).to have_text Spree.t(:frequently_asked_questions, scope: :spree_faq)
-    expect(page).to have_text 'Shopping'
-    expect(page).to have_text 'Do you sell stuff?'
+    expect(page).to have_text 'Frequently Asked Questions'
+    expect(page).to have_text question_category.name
+    expect(page).to have_text question.question
+    expect(page).to have_text question.answer
   end
 
   context 'when click on question' do
     scenario 'show answer' do
-      click_link 'Do you sell stuff?'
-      expect(page).to have_text 'Think so..'
+      click_link question.question
+      expect(page).to have_text question.answer
     end
   end
 end
