@@ -13,16 +13,20 @@
     border-left: 3px solid $faq-color;
   }
 
-  li > a {
-    display: block;
-    padding: 4px 20px;
-    font-weight: 500;
+  li {
+    max-width: 280px;
 
-    &:hover, &:focus {
-      padding-left: 19px;
-      color: $faq-color;
-      text-decoration: none;
-      border-left: 1px solid $faq-color;
+    > a {
+      display: block;
+      padding: 4px 20px;
+      font-weight: 500;
+
+      &:hover, &:focus {
+        padding-left: 19px;
+        color: $faq-color;
+        text-decoration: none;
+        border-left: 1px solid $faq-color;
+      }
     }
   }
 }
