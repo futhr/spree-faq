@@ -7,7 +7,7 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag :question_category, Spree::QuestionCategory.model_name.human %>
-        <%= f.collection_select :question_category_id, Spree::QuestionCategory.all, :id, :name, { include_blank: Spree.t('match_choices.none') }, class: 'select2' %>
+        <%= f.collection_select :question_category_id, Spree::QuestionCategory.reorder(name: :asc), :id, :name, { include_blank: Spree.t('match_choices.none') }, class: 'select2' %>
       </div>
       <div class="form-group">
         <%= f.label :question, Spree::Question.human_attribute_name(:question) %>
@@ -15,7 +15,7 @@
       </div>
       <div class="form-group">
         <%= f.label :answer, Spree::Question.human_attribute_name(:answer) %>
-        <%= f.text_area :answer, rows: 2, class: 'form-control' %>
+        <%= f.text_area :answer, rows: 6, class: 'form-control' %>
       </div>
     </div>
   </div>
