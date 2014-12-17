@@ -2,35 +2,43 @@
 
 <% content_for :sidebar do %>
   <div class="affix faq-sidebar" role="complementary" data-hook="faq_sidebar">
-    <h3>FAQ Categories</h3>
+    <h3><%= Spree.t(:faq_categories, scope: :spree_faq) %></h3>
     <ul class="nav">
     <% @categories.each do |category| %>
-      <li>
-        <a href="#<%= category.name.to_url %>">
-          <%= h category.name %>
-        </a>
-      </li>
+      <% next unless category.questions.any? %>
+      <% cache(category, 'nav') do %>
+        <li>
+          <a href="#<%= category.name.to_url %>">
+            <%= h category.name %>
+          </a>
+        </li>
+      <% end %>
     <% end %>
   </div>
 <% end if @categories.any? %>
 
 <section id="faqs" data-hook="faq_list">
   <% @categories.each do |category| %>
-    <div class="category">
-      <h3 id="<%= category.name.to_url %>"><%= h category.name %></h3>
-      <ul class="answers">
-        <% category.questions.each do |question| %>
-          <li>
-            <h4><%= question.question.to_s.html_safe %></h4>
-            <div class="answer">
-              <%= question.answer.to_s.html_safe %>
-            </div>
-            <div class="interaction">
-              <!-- for up/down votes, date, share links etc -->
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <% next unless category.questions.any? %>
+    <% cache(category) do %>
+      <div class="category">
+        <h3 id="<%= category.name.to_url %>"><%= h category.name %></h3>
+        <ul class="answers">
+          <% category.questions.each do |question| %>
+            <% cache(question) do %>
+              <li>
+                <h4><%= question.question.to_s.html_safe %></h4>
+                <div class="answer">
+                  <%= question.answer.to_s.html_safe %>
+                </div>
+                <div class="interaction">
+                  <!-- for up/down votes, date, share links etc -->
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 </section>

@@ -21,11 +21,4 @@ RSpec.feature 'FAQ', :js do
     expect(page).to have_text question.question
     expect(page).to have_text question.answer
   end
-
-  context 'when click on question' do
-    scenario 'show answer' do
-      click_link question.question
-      expect(page).to have_text question.answer
-    end
-  end
 end
