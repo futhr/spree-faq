@@ -12,6 +12,6 @@ module Spree
 
     delegate :name, to: :question_category, prefix: true, allow_nil: true
 
-    default_scope -> { order(position: :asc) }
+    default_scope { order(position: :asc) }
   end
 end

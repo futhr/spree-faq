@@ -7,6 +7,6 @@ module Spree
     validates :name, presence: true
     validates :name, uniqueness: { case_sensitive: false }
 
-    default_scope -> { order(position: :asc) }
+    default_scope { order(position: :asc) }
   end
 end
