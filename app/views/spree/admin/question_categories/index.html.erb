@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:listing_resource, resource: Spree::QuestionCategory.model_name.human(count: 2)) %>
+  <%= Spree.t(:listing_resource, resource: Spree::QuestionCategory.model_name.human(count: :many)) %>
 <% end %>
 
 <% content_for :page_actions do %>
@@ -37,7 +37,7 @@
       <tr data-hook="admin_question_category_index_headers">
         <th><%= sort_link @search, :updated_at, Spree::QuestionCategory.human_attribute_name(:updated_at) %></th>
         <th><%= sort_link @search, :name, Spree::QuestionCategory.human_attribute_name(:name) %></th>
-        <th><%= Spree::Question.model_name.human(count: 2) %></th>
+        <th><%= Spree::Question.model_name.human(count: :many) %></th>
         <th data-hook="admin_question_category_index_header_actions" class="actions"></th>
       </tr>
     </thead>
@@ -57,7 +57,7 @@
   </table>
 <% else %>
   <div class="alert alert-warning no-objects-found">
-    <%= Spree.t(:no_resource_found, resource: Spree::QuestionCategory.model_name.human(count: 2)) %>,
+    <%= Spree.t(:no_resource_found, resource: Spree::QuestionCategory.model_name.human(count: :many)) %>,
     <%= link_to Spree.t(:add_one), spree.new_admin_question_category_path %>!
   </div>
 <% end %>
