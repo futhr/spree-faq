@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:listing_resource, resource: Spree::QuestionCategory.model_name.human(count: :many)) %>
+  <%= Spree::QuestionCategory.model_name.human(count: :many) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= button_link_to Spree.t(:new_resource, resource: Spree::QuestionCategory.model_name.human), new_admin_question_category_path, icon: 'add', class: 'btn btn-success', id: 'admin_new_question_category_link' %>
+  <%= button_link_to Spree.t(:new_question_category), new_admin_question_category_path, icon: 'add', class: 'btn btn-success', id: 'admin_new_question_category_link' %>
 <% end %>
 
 <% content_for :table_filter do %>

@@ -19,10 +19,8 @@ en:
         created_at: Created At
         updated_at: Updated At
   spree:
-    listing_resource: Listing %{resource}
-    new_resource: New %{resource}
-    editing_resource: Editing %{resource}
-    back_to_resource: Back to %{resource}
+    new_question_category: New Question Category
+    new_question: New Question
     spree_faq:
       add_question: Add Question
       category_name: Category Name

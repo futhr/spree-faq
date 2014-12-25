@@ -19,10 +19,8 @@ sv:
         created_at: Datum skapad
         updated_at: Datum uppdaterad
   spree:
-    listing_resource: Alla %{resource}
-    new_resource: Ny %{resource}
-    editing_resource: Ändra %{resource}
-    back_to_resource: Tillbaka till %{resource}
+    new_question_category: Ny kategori
+    new_question: Ny fråga
     spree_faq:
       add_question: Lägg till fråga
       category_name: Kategorinamn
