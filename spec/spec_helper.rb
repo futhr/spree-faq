@@ -25,7 +25,6 @@ end
 require 'rspec/rails'
 require 'shoulda-matchers'
 require 'ffaker'
-require 'pry'
 
 RSpec.configure do |config|
   config.fail_fast = false
