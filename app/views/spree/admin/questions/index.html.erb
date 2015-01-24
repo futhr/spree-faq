@@ -59,7 +59,7 @@
     <tbody>
       <% @questions.each do |question| %>
         <tr id="<%= spree_dom_id question %>" data-hook="admin_question_index_rows" class="<%= cycle('odd', 'even') %>">
-          <td class="move-handle"><span class="icon icon-move handle"></span></td>
+          <td class="handle move-handle"><span class="icon icon-move handle"></span></td>
           <td><%= l question.updated_at, format: :short %></td>
           <td><%= h question.question %></td>
           <td><%= question.question_category_name %></td>
