@@ -1,3 +1,5 @@
 <% if can? :admin, Spree::QuestionCategory %>
-  <%= main_menu_tree Spree.t(:faq, scope: :spree_faq), icon: 'book', sub_menu: 'faq' %>
+  <ul class="nav nav-sidebar">
+    <%= main_menu_tree Spree.t(:faq, scope: :spree_faq), icon: 'book', sub_menu: 'faq', url: '#sidebar-faq' %>
+  </ul>
 <% end %>

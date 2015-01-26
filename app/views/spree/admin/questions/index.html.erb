@@ -63,7 +63,7 @@
           <td><%= l question.updated_at, format: :short %></td>
           <td><%= h question.question %></td>
           <td><%= question.question_category_name %></td>
-          <td data-hook="admin_question_index_row_actions" class="actions">
+          <td data-hook="admin_question_index_row_actions" class="actions text-right">
             <%= link_to_edit question, no_text: true %>
             <%= link_to_delete question, no_text: true %>
           </td>
