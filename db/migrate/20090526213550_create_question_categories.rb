@@ -1,14 +1,14 @@
 class CreateQuestionCategories < ActiveRecord::Migration
-  def self.up
+  def up
     create_table :question_categories do |t|
       t.string  :name
       t.integer :position
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 
-  def self.down
+  def down
     drop_table :question_categories
   end
 end
