@@ -1,0 +1,22 @@
+---
+es:
+  activerecord:
+    models:
+      spree/question_category:
+        one: Categoría de pregunta
+        other: Categorías de pregunta
+      spree/question:
+        one: Pregunta
+        other: Preguntas
+  spree:
+    spree_faq:
+      add_question: Añadir Pregunta
+      answer: Respuesta
+      back_to_categories: Volver a categorías
+      category_name: Nombre de categoría
+      create_category: Crear Categoría
+      editing_category_questions: Editando categorías de preguntas
+      frequently_asked_questions: Preguntas Frecuentes
+      new_question_category: Nueva Categoría
+      question_categories: Preguntas frecuentes
+      question_categories_admin: FAQ
