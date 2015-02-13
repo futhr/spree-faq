@@ -1,6 +1,6 @@
 #= require spree/backend
 
-(($) ->
+$(@).ready( ->
   $('form').on 'click', '.add_fields', ->
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
@@ -15,9 +15,8 @@
   $('#new_question_link').on 'click', ->
     $('#questions').append(new_question_html.replace(/NEW_RECORD/g, $('#questions .question').size()))
     $('#questions .question:last .remove').on 'click', ->
-      $(this).parent('.question').remove()
+      $(this).parents('.question').remove()
 
-    $.scrollTo($('#questions .question:last'), 800)
     $('.question:last input:first').focus()
 
-) jQuery
+)
