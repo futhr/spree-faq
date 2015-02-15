@@ -1,7 +1,7 @@
 # Spree FAQ
 
-[![Build Status](https://travis-ci.org/futhr/spree-faq.svg?branch=master)](https://travis-ci.org/futhr/spree-faq)
-[![Coverage Status](https://img.shields.io/coveralls/futhr/spree-faq.svg)](https://coveralls.io/r/futhr/spree-faq?branch=master)
+[![Build Status](https://travis-ci.org/futhr/spree-faq.svg?branch=3-0-stable)](https://travis-ci.org/futhr/spree-faq)
+[![Coverage Status](https://img.shields.io/coveralls/futhr/spree-faq.svg)](https://coveralls.io/r/futhr/spree-faq?branch=3-0-stable)
 [![Code Climate](https://codeclimate.com/github/futhr/spree-faq/badges/gpa.svg)](https://codeclimate.com/github/futhr/spree-faq)
 [![Gem Version](https://badge.fury.io/rb/spree-faq.svg)](http://badge.fury.io/rb/spree-faq)
 
@@ -14,7 +14,7 @@ An opinionated `plug-and-play` styled Spree Commerce extension for managing FAQs
 Add to your `Gemfile`:
 
 ```ruby
-gem 'spree-faq', github: 'futhr/spree-faq', require: 'spree_faq', branch: 'master'
+gem 'spree-faq', github: 'futhr/spree-faq', require: 'spree_faq', branch: '3-0-stable'
 ```
 
 Then run from the command line:
