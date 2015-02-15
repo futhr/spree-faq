@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'i18n-spec', '~> 0.5.2'
   s.add_development_dependency 'coffee-rails', '~> 3.2.2'
   s.add_development_dependency 'sass-rails', '~> 3.2.6'
-  s.add_development_dependency 'ffaker', '>= 1.24.0'
+  s.add_development_dependency 'ffaker', '>= 1.22.0'
   s.add_development_dependency 'guard-rspec', '>= 4.2.0'
   s.add_development_dependency 'launchy', '>= 2.4.0'
   s.add_development_dependency 'pry-rails', '>= 0.3.0'
