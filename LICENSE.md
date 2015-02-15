@@ -1,4 +1,4 @@
-Copyright (c) 2009-2014 Josh Nussbaum, Tobias Bohwalli, and other contributors.
+Copyright (c) 2009-2015 Josh Nussbaum, Tobias Bohwalli, and other contributors.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,

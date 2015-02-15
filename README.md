@@ -34,7 +34,7 @@ See corresponding [guidelines][1].
 
 ---
 
-Copyright (c) 2009-2014 [Josh Nussbaum][2], [Tobias Bohwalli][3], and other [contributors][4], released under the [New BSD License][5]
+Copyright (c) 2009-2015 [Josh Nussbaum][2], [Tobias Bohwalli][3], and other [contributors][4], released under the [New BSD License][5]
 
 [1]: https://github.com/futhr/spree-faq/blob/master/CONTRIBUTING.md
 [2]: https://github.com/joshnuss
