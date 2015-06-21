@@ -61,7 +61,9 @@ RSpec.describe Spree::Admin::QuestionCategoriesController, type: :controller do
     end
 
     it 'requires the :id parameter' do
-      expect { spree_delete :destroy }.to raise_error
+      expect {
+        spree_delete :destroy
+      }.to raise_error(ActionController::UrlGenerationError)
     end
   end
 end
