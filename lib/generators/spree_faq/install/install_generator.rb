@@ -8,7 +8,7 @@ module SpreeFaq
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/spree_faq\n", before: /\*\//, verbose: true
+        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/spree_faq\n", before: %r{\*\/}, verbose: true
       end
 
       def add_migrations
