@@ -6,7 +6,7 @@
     <ul class="nav">
     <% @categories.each do |category| %>
       <% next unless category.questions.any? %>
-      <% cache(category, 'nav') do %>
+      <% cache([category, 'nav']) do %>
         <li>
           <a href="#<%= category.name.to_url %>">
             <%= h category.name %>
