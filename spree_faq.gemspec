@@ -4,7 +4,7 @@ $LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
 require 'spree_faq/version'
 
 Gem::Specification.new do |s|
-  s.platform     = Gem::Platform::RUBY
+  s.platform      = Gem::Platform::RUBY
   s.name          = 'spree-faq'
   s.version       = SpreeFaq.version
   s.summary       = 'Adds an easy FAQ page for Spree Commerce'
